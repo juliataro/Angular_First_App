@@ -9,7 +9,7 @@ import { Observable } from "rxjs";
 })
 export class ApiService {
   constructor(
-    private httpClient: HttpClient // HttpClient service can make api calls to specific URLs
+    private httpClient: HttpClient // HttpClient service can make REST Api calls to specific URLs
   ) {}
 
   /* <T> represents a generic type parameter. It means 
@@ -22,6 +22,7 @@ export class ApiService {
   in reactive programming to handle asynchronous operations
    and data streams.*/
 
+  // https://www.youtube.com/watch?v=L1ONtRnIxcY
   get<T>(url: string, options?: Options): Observable<T> {
     return this.httpClient.get<T>(url, options) as Observable<T>;
   }
